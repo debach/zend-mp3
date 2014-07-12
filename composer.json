@@ -1,7 +1,7 @@
 {
     "name": "debach/zend-mp3",
     "type": "library",
-    "description": "Twig, the flexible, fast, and secure template language for PHP",
+    "description": "The best PHP library for Object-Oriented media file information reading and writing.",
     "autoload": {
         "psr-0" : {
             "Zend_" : "lib/"
