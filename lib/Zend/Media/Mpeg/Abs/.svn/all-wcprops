@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/261/trunk/src/Zend/Media/Mpeg/Abs
+END
+Object.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/177/trunk/src/Zend/Media/Mpeg/Abs/Object.php
+END
+LameHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/177/trunk/src/Zend/Media/Mpeg/Abs/LameHeader.php
+END
+Frame.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/261/trunk/src/Zend/Media/Mpeg/Abs/Frame.php
+END
+VbriHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/234/trunk/src/Zend/Media/Mpeg/Abs/VbriHeader.php
+END
+XingHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/177/trunk/src/Zend/Media/Mpeg/Abs/XingHeader.php
+END

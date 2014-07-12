@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/251/trunk/src/Zend/Media/Flac
+END
+MetadataBlock.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/241/trunk/src/Zend/Media/Flac/MetadataBlock.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/241/trunk/src/Zend/Media/Flac/Exception.php
+END

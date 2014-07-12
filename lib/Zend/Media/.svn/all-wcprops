@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/272/trunk/src/Zend/Media
+END
+Id3v1.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/217/trunk/src/Zend/Media/Id3v1.php
+END
+Riff.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/257/trunk/src/Zend/Media/Riff.php
+END
+Id3v2.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/218/trunk/src/Zend/Media/Id3v2.php
+END
+Asf.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/272/trunk/src/Zend/Media/Asf.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/177/trunk/src/Zend/Media/Exception.php
+END
+Iso14496.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/260/trunk/src/Zend/Media/Iso14496.php
+END
+Vorbis.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/239/trunk/src/Zend/Media/Vorbis.php
+END
+Flac.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/251/trunk/src/Zend/Media/Flac.php
+END

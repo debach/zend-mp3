@@ -1,0 +1,10 @@
+{
+    "name": "debach/zend-mp3",
+    "type": "library",
+    "description": "Twig, the flexible, fast, and secure template language for PHP",
+    "autoload": {
+        "psr-0" : {
+            "Zend_" : "lib/"
+        }
+    }
+}

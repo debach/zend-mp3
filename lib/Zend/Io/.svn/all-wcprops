@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/214/trunk/src/Zend/Io
+END
+FileReader.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/177/trunk/src/Zend/Io/FileReader.php
+END
+Reader.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/214/trunk/src/Zend/Io/Reader.php
+END
+StringWriter.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/177/trunk/src/Zend/Io/StringWriter.php
+END
+StringReader.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/177/trunk/src/Zend/Io/StringReader.php
+END
+FileWriter.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/177/trunk/src/Zend/Io/FileWriter.php
+END
+Writer.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/177/trunk/src/Zend/Io/Writer.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/177/trunk/src/Zend/Io/Exception.php
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/259/trunk/src/Zend/Media/Iso14496
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/177/trunk/src/Zend/Media/Iso14496/Exception.php
+END
+Box.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/177/trunk/src/Zend/Media/Iso14496/Box.php
+END
+FullBox.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/177/trunk/src/Zend/Media/Iso14496/FullBox.php
+END

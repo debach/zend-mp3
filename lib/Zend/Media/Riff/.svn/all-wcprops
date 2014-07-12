@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/258/trunk/src/Zend/Media/Riff
+END
+Chunk.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/257/trunk/src/Zend/Media/Riff/Chunk.php
+END
+ContainerChunk.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/257/trunk/src/Zend/Media/Riff/ContainerChunk.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/257/trunk/src/Zend/Media/Riff/Exception.php
+END
+StringChunk.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/257/trunk/src/Zend/Media/Riff/StringChunk.php
+END
