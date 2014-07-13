@@ -1,8 +1,14 @@
 {
     "name": "debach/zend-mp3",
+    "authors": [
+        {
+            "name": "Sven Vollbehr"
+        }
+    ],
     "type": "library",
     "license": "BSD-3-Clause",
     "description": "The best PHP library for Object-Oriented media file information reading and writing.",
+    "homepage": "https://code.google.com/p/php-reader/",
     "autoload": {
         "psr-0" : {
             "Zend_" : "lib/"
