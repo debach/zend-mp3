@@ -21,8 +21,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Mpeg/Abs/Object.php';
-require_once 'Zend/Media/Mpeg/Abs/Frame.php';
+
+
 /**#@-*/
 
 /**
@@ -118,12 +118,12 @@ final class Zend_Media_Mpeg_Abs extends Zend_Media_Mpeg_Abs_Object
         if ($filename instanceof Zend_Io_Reader) {
             $this->_reader = &$filename;
         } else {
-            require_once 'Zend/Io/FileReader.php';
+            
             try {
                 $this->_reader = new Zend_Io_FileReader($filename);
             } catch (Zend_Io_Exception $e) {
                 $this->_reader = null;
-                require_once 'Zend/Media/Mpeg/Exception.php';
+                
                 throw new Zend_Media_Mpeg_Exception($e->getMessage());
             }
         }
@@ -141,7 +141,7 @@ final class Zend_Media_Mpeg_Abs extends Zend_Media_Mpeg_Abs_Object
 
         /* Skip ID3v2 tags (some files errorneusly contain multiple tags) */
         while ($this->_reader->readString8(3) == 'ID3') {
-            require_once 'Zend/Media/Id3/Header.php';
+            
             $header = new Zend_Media_Id3_Header($this->_reader);
             $this->_reader->skip
                 ($header->getSize() +
@@ -163,7 +163,7 @@ final class Zend_Media_Mpeg_Abs extends Zend_Media_Mpeg_Abs_Object
 
                 if ($chunkId == 'fmt ') {
                     if ($this->_reader->readInt16LE() != 85) { // 85: MPEG-1 Layer 3 Codec
-                        require_once 'Zend/Media/Mpeg/Exception.php';
+                        
                         throw new Zend_Media_Mpeg_Exception
                             ('File does not contain a valid MPEG Audio Bit Stream (Contains RIFF with no MPEG ABS)');
                     } else {
@@ -191,11 +191,11 @@ final class Zend_Media_Mpeg_Abs extends Zend_Media_Mpeg_Abs_Object
              [$firstFrame->getFrequencyType()][$firstFrame->getMode()]);
         if (($xing = $this->_reader->readString8(4)) == 'Xing' ||
                 $xing == 'Info') {
-            require_once 'Zend/Media/Mpeg/Abs/XingHeader.php';
+            
             $this->_xingHeader =
                 new Zend_Media_Mpeg_Abs_XingHeader($this->_reader, $options);
             if ($this->_reader->readString8(4) == 'LAME') {
-                require_once 'Zend/Media/Mpeg/Abs/LameHeader.php';
+                
                 $this->_lameHeader =
                     new Zend_Media_Mpeg_Abs_LameHeader
                         ($this->_reader, $options);
@@ -207,7 +207,7 @@ final class Zend_Media_Mpeg_Abs extends Zend_Media_Mpeg_Abs_Object
 
         $this->_reader->setOffset($firstFrame->getOffset() + 4 + 32);
         if ($this->_reader->readString8(4) == 'VBRI') {
-            require_once 'Zend/Media/Mpeg/Abs/VbriHeader.php';
+            
             $this->_vbriHeader =
                 new Zend_Media_Mpeg_Abs_VbriHeader($this->_reader, $options);
 

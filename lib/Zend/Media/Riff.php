@@ -9,7 +9,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Riff/ContainerChunk.php';
+
 /**#@-*/
 
 /**
@@ -61,11 +61,11 @@ final class Zend_Media_Riff extends Zend_Media_Riff_ContainerChunk
             $reader = &$filename;
         } else {
             $this->_filename = $filename;
-            require_once('Zend/Io/FileReader.php');
+            
             try {
                 $reader = new Zend_Io_FileReader($filename);
             } catch (Zend_Io_Exception $e) {
-                require_once 'Zend/Media/Riff/Exception.php';
+                
                 throw new Zend_Media_Riff_Exception($e->getMessage());
             }
         }

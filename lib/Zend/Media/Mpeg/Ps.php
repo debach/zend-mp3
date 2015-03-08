@@ -21,8 +21,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Bit/Twiddling.php';
-require_once 'Zend/Media/Mpeg/Object.php';
+
+
 /**#@-*/
 
 /**
@@ -63,12 +63,12 @@ final class Zend_Media_Mpeg_Ps extends Zend_Media_Mpeg_Object
         if ($filename instanceof Zend_Io_Reader) {
             $this->_reader = &$filename;
         } else {
-            require_once 'Zend/Io/FileReader.php';
+            
             try {
                 $this->_reader = new Zend_Io_FileReader($filename);
             } catch (Zend_Io_Exception $e) {
                 $this->_reader = null;
-                require_once 'Zend/Media/Mpeg/Exception.php';
+                
                 throw new Zend_Media_Mpeg_Exception($e->getMessage());
             }
         }
@@ -92,7 +92,7 @@ final class Zend_Media_Mpeg_Ps extends Zend_Media_Mpeg_Object
                 $i1 = $this->_reader->readUInt32BE();
                 $i2 = $this->_reader->readUInt32BE();
                 if (!Zend_Bit_Twiddling::testAllBits($i2, 0x2000)) {
-                    require_once 'Zend/Media/Mpeg/Exception.php';
+                    
                     throw new Zend_Media_Mpeg_Exception
                         ('File does not contain a valid MPEG Program Stream (Invalid mark)');
                 }

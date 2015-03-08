@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Io/Reader.php';
+
 /**#@-*/
 
 /**
@@ -135,7 +135,7 @@ abstract class Zend_Media_Mpeg_Object
             $start = $this->_reader->getOffset();
             if (($buffer = substr($buffer, -4) .
                      $this->_reader->read(512)) === false) {
-                require_once 'Zend/Media/Mpeg/Exception.php';
+                
                 throw new Zend_Media_Mpeg_Exception('Invalid data');
             }
             $limit = strlen($buffer);
@@ -160,7 +160,7 @@ abstract class Zend_Media_Mpeg_Object
         }
 
         /* No start code found within 2048 bytes, the maximum size of a pack */
-        require_once 'Zend/Media/Mpeg/Exception.php';
+        
         throw new Zend_Media_Mpeg_Exception('Invalid data');
     }
 
@@ -183,7 +183,7 @@ abstract class Zend_Media_Mpeg_Object
             $start = 0;
             $position = $position - 512;
             if ($position < 0) {
-                require_once 'Zend/Media/Mpeg/Exception.php';
+                
                 throw new Zend_Media_Mpeg_Exception('Invalid data');
             }
             $this->_reader->setOffset($position);
@@ -242,7 +242,7 @@ abstract class Zend_Media_Mpeg_Object
         if (method_exists($this, 'get' . ucfirst($name))) {
             return call_user_func(array($this, 'get' . ucfirst($name)));
         } else {
-            require_once 'Zend/Media/Mpeg/Exception.php';
+            
             throw new Zend_Media_Mpeg_Exception('Unknown field: ' . $name);
         }
     }
@@ -260,7 +260,7 @@ abstract class Zend_Media_Mpeg_Object
             call_user_func
                 (array($this, 'set' . ucfirst($name)), $value);
         } else {
-            require_once 'Zend/Media/Mpeg/Exception.php';
+            
             throw new Zend_Media_Mpeg_Exception('Unknown field: ' . $name);
         }
     }

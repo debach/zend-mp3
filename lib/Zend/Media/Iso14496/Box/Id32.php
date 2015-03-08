@@ -33,8 +33,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Iso14496/FullBox.php';
-require_once 'Zend/Media/Id3v2.php';
+
+
 /**#@-*/
 
 /**

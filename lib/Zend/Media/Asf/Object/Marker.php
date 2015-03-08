@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object.php';
+
 /**#@-*/
 
 /**
@@ -161,7 +161,7 @@ final class Zend_Media_Asf_Object_Marker extends Zend_Media_Asf_Object
      */
     public function write($writer)
     {
-        require_once 'Zend/Io/StringWriter.php';
+        
         
         $name = iconv
             ($this->getOption('encoding'), 'utf-16le', $this->_name) . "\0\0";

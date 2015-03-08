@@ -21,9 +21,9 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Io/Reader.php';
-require_once 'Zend/Io/FileReader.php';
-require_once 'Zend/Media/Ogg/Page.php';
+
+
+
 /**#@-*/
 
 /**

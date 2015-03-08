@@ -21,8 +21,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Id3/Frame.php';
-require_once 'Zend/Media/Id3/Encoding.php';
+
+
 /**#@-*/
 
 /**
@@ -279,7 +279,7 @@ final class Zend_Media_Id3_Frame_Comr extends Zend_Media_Id3_Frame
      */
     public function getDate() 
     {
-        require_once 'Zend/Date.php';
+        
         $date = new Zend_Date(0);
         $date->setTimezone('UTC');
         $date->set($this->_date, 'yyyyMMdd');
@@ -295,7 +295,7 @@ final class Zend_Media_Id3_Frame_Comr extends Zend_Media_Id3_Frame
      */
     public function setDate($date) 
     {
-        require_once 'Zend/Date.php';
+        
         if ($date === null) {
             $date = Zend_Date::now();
         }

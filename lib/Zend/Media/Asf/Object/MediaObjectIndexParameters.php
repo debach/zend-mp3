@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object.php';
+
 /**#@-*/
 
 /**
@@ -127,7 +127,7 @@ final class Zend_Media_Asf_Object_MediaObjectIndexParameters
      */
     public function write($writer)
     {
-        require_once 'Zend/Media/Asf/Exception.php';
+        
         throw new Zend_Media_Asf_Exception('Operation not supported');
     }
 }

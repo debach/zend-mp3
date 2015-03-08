@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object.php';
+
 /**#@-*/
 
 /**
@@ -137,7 +137,7 @@ final class Zend_Media_Asf_Object_GroupMutualExclusion
      */
     public function write($writer)
     {
-        require_once 'Zend/Io/StringWriter.php';
+        
         
         $recordCount = count($this->_records);
         $recordWriter = new Zend_Io_StringWriter();

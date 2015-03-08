@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object.php';
+
 /**#@-*/
 
 /**
@@ -135,7 +135,7 @@ final class Zend_Media_Asf_Object_CodecList extends Zend_Media_Asf_Object
      */
     public function write($writer)
     {
-        require_once 'Zend/Io/StringWriter.php';
+        
         $codecEntriesCount = count($this->_entries);
         $codecEntriesWriter = new Zend_Io_StringWriter();
         for ($i = 0; $i < $codecEntriesCount; $i++) {

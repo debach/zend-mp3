@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object/Container.php';
+
 /**#@-*/
 
 /**
@@ -110,7 +110,7 @@ final class Zend_Media_Asf_Object_Header extends Zend_Media_Asf_Object_Container
      */
     public function write($writer)
     {
-        require_once 'Zend/Io/StringWriter.php';
+        
         $objectsWriter = new Zend_Io_StringWriter();
         foreach ($this->getObjects() as $objects) {
             foreach ($objects as $object) {

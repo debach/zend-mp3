@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object/Container.php';
+
 /**#@-*/
 
 /**
@@ -69,12 +69,12 @@ class Zend_Media_Asf extends Zend_Media_Asf_Object_Container
         if ($filename instanceof Zend_Io_Reader) {
             $this->_reader = &$filename;
         } else {
-            require_once 'Zend/Io/FileReader.php';
+            
             try {
                 $this->_reader = new Zend_Io_FileReader($filename);
             } catch (Zend_Io_Exception $e) {
                 $this->_reader = null;
-                require_once 'Zend/Media/Id3/Exception.php';
+                
                 throw new Zend_Media_Asf_Exception($e->getMessage());
             }
             if (is_string($filename) && !isset($options['readonly'])) {
@@ -141,13 +141,13 @@ class Zend_Media_Asf extends Zend_Media_Asf_Object_Container
     public function write($filename)
     {
         if ($filename === null && ($filename = $this->_filename) === null) {
-            require_once 'Zend/Media/Asf/Exception.php';
+            
             throw new Zend_Media_Asf_Exception
                 ('No file given to write to');
         } else if ($filename !== null && $this->_filename !== null &&
                    realpath($filename) != realpath($this->_filename) &&
                    !copy($this->_filename, $filename)) {
-            require_once 'Zend/Media/Asf/Exception.php';
+            
             throw new Zend_Media_Asf_Exception
                 ('Unable to copy source to destination: ' .
                  realpath($this->_filename) . '->' . realpath($filename));
@@ -155,7 +155,7 @@ class Zend_Media_Asf extends Zend_Media_Asf_Object_Container
 
         if (($fd = fopen
              ($filename, file_exists($filename) ? 'r+b' : 'wb')) === false) {
-            require_once 'Zend/Media/Asf/Exception.php';
+            
             throw new Zend_Media_Asf_Exception
                 ('Unable to open file for writing: ' . $filename);
         }
@@ -166,7 +166,7 @@ class Zend_Media_Asf extends Zend_Media_Asf_Object_Container
         $header->headerExtension->removeObjectsByIdentifier
             (Zend_Media_Asf_Object::PADDING);
 
-        require_once 'Zend/Io/StringWriter.php';
+        
         $buffer = new Zend_Io_StringWriter();
         $header->write($buffer);
         $headerData = $buffer->toString();

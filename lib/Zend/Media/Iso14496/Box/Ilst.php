@@ -33,7 +33,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Iso14496/Box.php';
+
 /**#@-*/
 
 /**
@@ -163,7 +163,7 @@ final class Zend_Media_Iso14496_Box_Ilst_Container
 }
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Iso14496/FullBox.php';
+
 /**#@-*/
 
 /**
@@ -284,7 +284,7 @@ final class Zend_Media_Iso14496_Box_Data extends Zend_Media_Iso14496_FullBox
         if (method_exists($this, 'get' . ucfirst($name))) {
             return call_user_func(array($this, 'get' . ucfirst($name)));
         }
-        require_once 'Zend/Media/Iso14496/Exception.php';
+        
         throw new Zend_Media_Iso14496_Exception('Unknown box/field: ' . $name);
     }
 

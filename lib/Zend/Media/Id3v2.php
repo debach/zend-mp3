@@ -21,8 +21,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Id3/Object.php';
-require_once 'Zend/Media/Id3/Header.php';
+
+
 /**#@-*/
 
 /**
@@ -116,12 +116,12 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
         if ($filename instanceof Zend_Io_Reader) {
             $this->_reader = &$filename;
         } else {
-            require_once 'Zend/Io/FileReader.php';
+            
             try {
                 $this->_reader = new Zend_Io_FileReader($filename);
             } catch (Zend_Io_Exception $e) {
                 $this->_reader = null;
-                require_once 'Zend/Media/Id3/Exception.php';
+                
                 throw new Zend_Media_Id3_Exception($e->getMessage());
             }
             if (is_string($filename) && !isset($options['readonly'])) {
@@ -132,7 +132,7 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
         $startOffset = $this->_reader->getOffset();
 
         if ($this->_reader->read(3) != 'ID3') {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception
                 ('File does not contain ID3v2 tag');
         }
@@ -143,7 +143,7 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
 
         if ($this->_header->getVersion() < 3 ||
             $this->_header->getVersion() > 4) {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception
                 ('File does not contain ID3v2 tag of supported version: v2.' .
                  $this->_header->getVersion());
@@ -151,7 +151,7 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
         if ($this->_header->getVersion() < 4 &&
             $this->_header->hasFlag(Zend_Media_Id3_Header::UNSYNCHRONISATION)) {
             $data = $this->_reader->read($this->_header->getSize());
-            require_once 'Zend/Io/StringReader.php';
+            
             $this->_reader = new Zend_Io_StringReader
                 ($this->_decodeUnsynchronisation($data));
             $tagSize = $this->_reader->getSize();
@@ -161,7 +161,7 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
             $this->setOption('unsynchronisation', true);
         }
         if ($this->_header->hasFlag(Zend_Media_Id3_Header::EXTENDED_HEADER)) {
-            require_once 'Zend/Media/Id3/ExtendedHeader.php';
+            
             $this->_extendedHeader =
                 new Zend_Media_Id3_ExtendedHeader($this->_reader, $options);
         }
@@ -198,14 +198,14 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
             if (@fopen($file = 'Zend/Media/Id3/Frame/' .
                        ucfirst(strtolower($identifier)) . '.php', 'r',
                        true) !== false) {
-                require_once($file);
+                
             }
             if (class_exists
                 ($classname = 'Zend_Media_Id3_Frame_' .
                      ucfirst(strtolower($identifier)))) {
                 $frame = new $classname($this->_reader, $options);
             } else {
-                require_once 'Zend/Media/Id3/Frame/Unknown.php';
+                
                 $frame =
                     new Zend_Media_Id3_Frame_Unknown($this->_reader, $options);
             }
@@ -269,7 +269,7 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
             $this->_extendedHeader->setOptions($this->getOptions());
             $this->_extendedHeader = $extendedHeader;
         } else {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception('Invalid argument');
         }
     }
@@ -448,16 +448,16 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
     public function write($filename)
     {
         if ($filename === null && ($filename = $this->_filename) === null) {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception('No file given to write to');
         } else if ($filename !== null && $filename instanceof Zend_Io_Writer) {
-            require_once 'Zend/Io/Writer.php';
+            
             $this->_writeData($filename);
             return;
         } else if ($filename !== null && $this->_filename !== null &&
                    realpath($filename) != realpath($this->_filename) &&
                    !copy($this->_filename, $filename)) {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception
                 ('Unable to copy source to destination: ' .
                  realpath($this->_filename) . '->' . realpath($filename));
@@ -465,7 +465,7 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
 
         if (($fd = fopen
              ($filename, file_exists($filename) ? 'r+b' : 'wb')) === false) {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception
                 ('Unable to open file for writing: ' . $filename);
         }
@@ -493,7 +493,7 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
                 $oldTagSize = 0;
             }
         }
-        require_once 'Zend/Io/StringWriter.php';
+        
         $tag = new Zend_Io_StringWriter();
         $this->_writeData($tag);
         $tagSize = $tag->getSize();
@@ -635,7 +635,7 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
         if ($filename instanceof Zend_Io_Reader) {
             $reader = &$filename;
         } else {
-            require_once 'Zend/Io/FileReader.php';
+            
             $reader = new Zend_Io_FileReader($filename, 'r+b');
         }
 
@@ -678,13 +678,13 @@ final class Zend_Media_Id3v2 extends Zend_Media_Id3_Object
         }
         if (@fopen($filename = 'Zend/Media/Id3/Frame/' . ucfirst($name) .
                    '.php', 'r', true) !== false) {
-            require_once $filename;
+            
         }
         if (class_exists
             ($classname = 'Zend_Media_Id3_Frame_' . ucfirst($name))) {
             return $this->addFrame(new $classname());
         }
-        require_once 'Zend/Media/Id3/Exception.php';
+        
         throw new Zend_Media_Id3_Exception('Unknown frame/field: ' . $name);
     }
 

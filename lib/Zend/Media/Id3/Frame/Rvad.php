@@ -22,7 +22,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Id3/Frame.php';
+
 /**#@-*/
 
 /**
@@ -108,7 +108,7 @@ final class Zend_Media_Id3_Frame_Rvad extends Zend_Media_Id3_Frame
         $flags = $this->_reader->readInt8();
         $descriptionBits = $this->_reader->readInt8();
         if ($descriptionBits <= 8 || $descriptionBits > 16) {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception
                 ('Unsupported description bit size of: ' . $descriptionBits);
         }

@@ -21,8 +21,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Bit/Twiddling.php';
-require_once 'Zend/Media/Mpeg/Abs/Object.php';
+
+
 /**#@-*/
 
 /**

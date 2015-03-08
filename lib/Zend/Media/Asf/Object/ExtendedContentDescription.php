@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object.php';
+
 /**#@-*/
 
 /**
@@ -161,7 +161,7 @@ final class Zend_Media_Asf_Object_ExtendedContentDescription
      */
     public function write($writer)
     {
-        require_once 'Zend/Io/StringWriter.php';
+        
         $contentDescriptorsCount = count($this->_contentDescriptors);
         $contentDescriptorsWriter = new Zend_Io_StringWriter();
         foreach ($this->_contentDescriptors as $name => $value) {
@@ -214,7 +214,7 @@ final class Zend_Media_Asf_Object_ExtendedContentDescription
                     ->writeInt64LE($value);
             } else {
                 // Invalid value and there is nothing to be done
-                require_once 'Zend/Media/Asf/Exception.php';
+                
                 throw new Zend_Media_Asf_Exception('Invalid data type');
             }
         }

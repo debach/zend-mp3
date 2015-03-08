@@ -9,7 +9,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Riff/Chunk.php';
+
 /**#@-*/
 
 /**
@@ -51,7 +51,7 @@ abstract class Zend_Media_Riff_ContainerChunk extends Zend_Media_Riff_Chunk
             if (@fopen
                     ($file = 'Zend/Media/Riff/Chunk/' .
                      ucfirst(strtolower(rtrim($identifier, ' '))) . '.php', 'r', true) !== false) {
-                require_once($file);
+                
             }
             if (class_exists($classname = 'Zend_Media_Riff_Chunk_' . ucfirst(strtolower(rtrim($identifier, ' '))))) {
                 $this->_chunks[] = new $classname($this->_reader);
@@ -136,7 +136,7 @@ abstract class Zend_Media_Riff_ContainerChunk extends Zend_Media_Riff_Chunk
         if (method_exists($this, 'get' . ucfirst($name))) {
             return call_user_func(array($this, 'get' . ucfirst($name)));
         }
-        require_once 'Zend/Media/Riff/Exception.php';
+        
         throw new Zend_Media_Riff_Exception('Unknown chunk/field: ' . $name);
     }
 }

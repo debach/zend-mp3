@@ -21,10 +21,10 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Io/Reader.php';
-require_once 'Zend/Media/Vorbis/Header/Identification.php';
-require_once 'Zend/Media/Vorbis/Header/Comment.php';
-require_once 'Zend/Media/Vorbis/Header/Setup.php';
+
+
+
+
 /**#@-*/
 
 /**
@@ -78,12 +78,12 @@ final class Zend_Media_Vorbis
             $this->_reader = &$filename;
         } else {
             $this->_filename = $filename;
-            require_once('Zend/Io/FileReader.php');
+            
             try {
                 $this->_reader = new Zend_Io_FileReader($filename);
             } catch (Zend_Io_Exception $e) {
                 $this->_reader = null;
-                require_once 'Zend/Media/Vorbis/Exception.php';
+                
                 throw new Zend_Media_Vorbis_Exception($e->getMessage());
             }
         }
@@ -134,7 +134,7 @@ final class Zend_Media_Vorbis
         if (method_exists($this, 'get' . ucfirst($name))) {
             return call_user_func(array($this, 'get' . ucfirst($name)));
         } else {
-            require_once('Zend/Media/Vorbis/Exception.php');
+            
             throw new Zend_Media_Vorbis_Exception('Unknown field: ' . $name);
         }
     }

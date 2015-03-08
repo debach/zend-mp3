@@ -21,8 +21,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Io/Reader.php';
-require_once 'Zend/Io/Writer.php';
+
+
 /**#@-*/
 
 /**
@@ -133,7 +133,7 @@ abstract class Zend_Media_Id3_Object
         if (method_exists($this, 'get' . ucfirst($name))) {
             return call_user_func(array($this, 'get' . ucfirst($name)));
         } else {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception('Unknown field: ' . $name);
         }
     }
@@ -150,7 +150,7 @@ abstract class Zend_Media_Id3_Object
         if (method_exists($this, 'set' . ucfirst($name))) {
             call_user_func(array($this, 'set' . ucfirst($name)), $value);
         } else {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception('Unknown field: ' . $name);
         }
     }

@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Vorbis/Header.php';
+
 /**#@-*/
 
 /**
@@ -81,7 +81,7 @@ final class Zend_Media_Vorbis_Header_Identification extends Zend_Media_Vorbis_He
         $this->_blocksize1 = pow(2, ($tmp >> 4) & 0xf);
         $framingFlag = $this->_reader->readUInt8() & 0x1;
         if ($this->_blocksize0 > $this->_blocksize1 || $framingFlag == 0) {
-            require_once 'Zend/Media/Vorbis/Exception.php';
+            
             throw new Zend_Media_Vorbis_Exception('Undecodable Vorbis stream');
         }
     }

@@ -69,7 +69,7 @@ class Zend_Io_Reader
     {
         if (!is_resource($fd) ||
             !in_array(get_resource_type($fd), array('stream'))) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception
                 ('Invalid resource type (only resources of type stream are supported)');
         }
@@ -109,7 +109,7 @@ class Zend_Io_Reader
     public function getOffset()
     {
         if ($this->_fd === null) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Cannot operate on a closed stream');
         }
         return ftell($this->_fd);
@@ -127,7 +127,7 @@ class Zend_Io_Reader
     public function setOffset($offset)
     {
         if ($this->_fd === null) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Cannot operate on a closed stream');
         }
         fseek($this->_fd, $offset < 0 ? $this->getSize() + $offset : $offset);
@@ -164,14 +164,14 @@ class Zend_Io_Reader
     public function skip($size)
     {
         if ($size < 0) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Size cannot be negative');
         }
         if ($size == 0) {
             return;
         }
         if ($this->_fd === null) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Cannot operate on a closed stream');
         }
         fseek($this->_fd, $size, SEEK_CUR);
@@ -188,14 +188,14 @@ class Zend_Io_Reader
     public function read($length)
     {
         if ($length < 0) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Length cannot be negative');
         }
         if ($length == 0) {
             return '';
         }
         if ($this->_fd === null) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Cannot operate on a closed stream');
         }
         return fread($this->_fd, $length);
@@ -801,7 +801,7 @@ class Zend_Io_Reader
     public function reset()
     {
         if ($this->_fd === null) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Cannot operate on a closed stream');
         }
         fseek($this->_fd, 0);
@@ -868,7 +868,7 @@ class Zend_Io_Reader
             return call_user_func
                 (array($this, 'get' . ucfirst(strtolower($name))));
         } else {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Unknown field: ' . $name);
         }
     }
@@ -886,7 +886,7 @@ class Zend_Io_Reader
             call_user_func
                 (array($this, 'set' . ucfirst(strtolower($name))), $value);
         } else {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Unknown field: ' . $name);
         }
     }

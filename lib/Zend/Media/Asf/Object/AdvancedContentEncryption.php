@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object.php';
+
 /**#@-*/
 
 /**
@@ -131,7 +131,7 @@ final class Zend_Media_Asf_Object_AdvancedContentEncryption
      */
     public function write($writer)
     {
-        require_once 'Zend/Io/StringWriter.php';
+        
         $contentEncryptionRecordsCount =
             count($this->_contentEncryptionRecords);
         $contentEncryptionRecordsWriter = new Zend_Io_StringWriter();

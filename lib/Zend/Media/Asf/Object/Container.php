@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object.php';
+
 /**#@-*/
 
 /**
@@ -58,19 +58,19 @@ abstract class Zend_Media_Asf_Object_Container extends Zend_Media_Asf_Object
                 if (@fopen($filename = 'Zend/Media/Asf/Object/' .
                            $defaultclassnames[$guid] . '.php',
                            'r', true) !== false) {
-                    require_once($filename);
+                    
                 }
                 if (class_exists
                     ($classname = 'Zend_Media_Asf_Object_' .
                      $defaultclassnames[$guid])) {
                     $object = new $classname($this->_reader, $this->_options);
                  } else {
-                    require_once 'Zend/Media/Asf/Object/Unknown.php';
+                    
                     $object = new Zend_Media_Asf_Object_Unknown
                         ($this->_reader, $this->_options);
                  }
             } else {
-                require_once 'Zend/Media/Asf/Object/Unknown.php';
+                
                 $object = new Zend_Media_Asf_Object_Unknown
                     ($this->_reader, $this->_options);
             }
@@ -290,7 +290,7 @@ abstract class Zend_Media_Asf_Object_Container extends Zend_Media_Asf_Object
             } else {
                 if (@fopen($filename = 'Zend/Media/Asf/Object/' .
                            ucfirst($name) . '.php', 'r', true) !== false) {
-                    require_once($filename);
+                    
                 }
                 if (class_exists
                     ($classname = 'Zend_Media_Asf_Object_' . ucfirst($name))) {
@@ -300,7 +300,7 @@ abstract class Zend_Media_Asf_Object_Container extends Zend_Media_Asf_Object
                 }
             }
         }
-        require_once 'Zend/Media/Asf/Exception.php';
+        
         throw new Zend_Media_Asf_Exception('Unknown field/object: ' . $name);
     }
 
@@ -329,7 +329,7 @@ abstract class Zend_Media_Asf_Object_Container extends Zend_Media_Asf_Object
             $value->setOptions($this->_options);
             $this->_objects[constant($constname)] = array($value);
         } else {
-            require_once 'Zend/Media/Asf/Exception.php';
+            
             throw new Zend_Media_Asf_Exception
                 ('Unknown field/object: ' . $name);
         }

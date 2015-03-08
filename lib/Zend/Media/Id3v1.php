@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Io/FileReader.php';
+
 /**#@-*/
 
 /**
@@ -114,26 +114,26 @@ final class Zend_Media_Id3v1
             $this->_reader = &$filename;
         } else {
             $this->_filename = $filename;
-            require_once('Zend/Io/FileReader.php');
+            
             try {
                 $this->_reader = new Zend_Io_FileReader($filename);
             } catch (Zend_Io_Exception $e) {
                 $this->_reader = null;
-                require_once 'Zend/Media/Id3/Exception.php';
+                
                 throw new Zend_Media_Id3_Exception($e->getMessage());
             }
         }
 
         if ($this->_reader->getSize() < 128) {
             $this->_reader = null;
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception
                 ('File does not contain ID3v1 tag');
         }
         $this->_reader->setOffset(-128);
         if ($this->_reader->read(3) != 'TAG') {
             $this->_reader = null;
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception
                 ('File does not contain ID3v1 tag');
         }
@@ -328,12 +328,12 @@ final class Zend_Media_Id3v1
     public function write($filename = null)
     {
         if ($filename === null && ($filename = $this->_filename) === null) {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception
                 ('No file given to write the tag to');
         }
 
-        require_once('Zend/Io/FileWriter.php');
+        
         try {
             $writer = new Zend_Io_FileWriter($filename);
             $offset = $writer->getSize();
@@ -361,7 +361,7 @@ final class Zend_Media_Id3v1
             $writer->writeInt8($this->_genre);
             $writer->flush();
         } catch (Zend_Io_Exception $e) {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception($e->getMessage());
         }
 
@@ -394,7 +394,7 @@ final class Zend_Media_Id3v1
             return call_user_func
                 (array($this, 'get' . ucfirst(strtolower($name))));
         } else {
-            require_once('Zend/Media/Id3/Exception.php');
+            
             throw new Zend_Media_Id3_Exception('Unknown field: ' . $name);
         }
     }
@@ -412,7 +412,7 @@ final class Zend_Media_Id3v1
             call_user_func
                 (array($this, 'set' . ucfirst(strtolower($name))), $value);
         } else {
-            require_once('Zend/Media/Id3/Exception.php');
+            
             throw new Zend_Media_Id3_Exception('Unknown field: ' . $name);
         }
     }

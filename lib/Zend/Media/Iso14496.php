@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Iso14496/Box.php';
+
 /**#@-*/
 
 /**
@@ -283,13 +283,13 @@ final class Zend_Media_Iso14496 extends Zend_Media_Iso14496_Box
         if ($filename instanceof Zend_Io_Reader) {
             $this->_reader = &$filename;
         } else {
-            require_once 'Zend/Io/FileReader.php';
+            
             try {
                 $this->_reader = new Zend_Io_FileReader($filename);
                 $this->_autoClose = true;
             } catch (Zend_Io_Exception $e) {
                 $this->_reader = null;
-                require_once 'Zend/Media/Iso14496/Exception.php';
+                
                 throw new Zend_Media_Iso14496_Exception($e->getMessage());
             }
             if (is_string($filename) && !isset($options['readonly'])) {
@@ -330,13 +330,13 @@ final class Zend_Media_Iso14496 extends Zend_Media_Iso14496_Box
     public function write($filename)
     {
         if ($filename === null && ($filename = $this->_filename) === null) {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception
                 ('No file given to write to');
         } else if ($filename !== null && $this->_filename !== null &&
                    realpath($filename) != realpath($this->_filename) &&
                    !copy($this->_filename, $filename)) {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception
                 ('Unable to copy source to destination: ' .
                  realpath($this->_filename) . '->' . realpath($filename));
@@ -344,7 +344,7 @@ final class Zend_Media_Iso14496 extends Zend_Media_Iso14496_Box
 
         if (($fd = fopen
              ($filename, file_exists($filename) ? 'r+b' : 'wb')) === false) {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception
                 ('Unable to open file for writing: ' . $filename);
         }

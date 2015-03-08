@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object.php';
+
 /**#@-*/
 
 /**
@@ -218,7 +218,7 @@ final class Zend_Media_Asf_Object_ContentDescription
             ($this->getOption('encoding'), 'utf-16le',
              $this->_rating ? $this->_rating . "\0" : '');
 
-        require_once 'Zend/Io/StringWriter.php';
+        
         $buffer = new Zend_Io_StringWriter();
         $buffer->writeUInt16LE(strlen($title))
                ->writeUInt16LE(strlen($author))

@@ -33,7 +33,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Iso14496/FullBox.php';
+
 /**#@-*/
 
 /**

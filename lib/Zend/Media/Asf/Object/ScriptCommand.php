@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object.php';
+
 /**#@-*/
 
 /**
@@ -134,7 +134,7 @@ final class Zend_Media_Asf_Object_ScriptCommand extends Zend_Media_Asf_Object
      */
     public function write($writer)
     {
-        require_once 'Zend/Io/StringWriter.php';
+        
         
         $commandTypes = array();
         foreach ($this->_commands as $command) {

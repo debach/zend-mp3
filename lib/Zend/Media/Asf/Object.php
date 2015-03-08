@@ -120,7 +120,7 @@ abstract class Zend_Media_Asf_Object
                  ('/(?<=[a-z])[A-Z]/', '_$0', substr(get_class($this), 22))))) {
                 $this->_identifier = constant($constant);
             } else {
-                require_once 'Zend/Media/Asf/Exception.php';
+                
                 throw new Zend_Media_Asf_Exception
                     ('Object identifier could not be determined');
             }
@@ -299,7 +299,7 @@ abstract class Zend_Media_Asf_Object
         if (method_exists($this, 'is' . ucfirst($name))) {
             return call_user_func(array($this, 'is' . ucfirst($name)));
         }
-        require_once 'Zend/Media/Asf/Exception.php';
+        
         throw new Zend_Media_Asf_Exception('Unknown field: ' . $name);
     }
 
@@ -315,7 +315,7 @@ abstract class Zend_Media_Asf_Object
         if (method_exists($this, 'set' . ucfirst($name))) {
             call_user_func(array($this, 'set' . ucfirst($name)), $value);
         } else {
-            require_once 'Zend/Media/Asf/Exception.php';
+            
             throw new Zend_Media_Asf_Exception('Unknown field: ' . $name);
         }
     }

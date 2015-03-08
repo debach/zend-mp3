@@ -9,7 +9,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Riff/ContainerChunk.php';
+
 /**#@-*/
 
 /**

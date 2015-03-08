@@ -68,7 +68,7 @@ class Zend_Io_Writer
     {
         if (!is_resource($fd) ||
                 !in_array(get_resource_type($fd), array('stream'))) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception
                 ('Invalid resource type (only resources of type stream are supported)');
         }
@@ -95,7 +95,7 @@ class Zend_Io_Writer
     public function getOffset()
     {
         if ($this->_fd === null) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Cannot operate on a closed stream');
         }
         return ftell($this->_fd);
@@ -113,7 +113,7 @@ class Zend_Io_Writer
     public function setOffset($offset)
     {
         if ($this->_fd === null) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Cannot operate on a closed stream');
         }
         fseek($this->_fd, $offset < 0 ? $this->getSize() + $offset : $offset);
@@ -128,7 +128,7 @@ class Zend_Io_Writer
     public function getSize()
     {
         if ($this->_fd === null) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Cannot operate on a closed stream');
         }
         return $this->_size;
@@ -144,7 +144,7 @@ class Zend_Io_Writer
     public function setSize($size)
     {
         if ($this->_fd === null) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Cannot operate on a closed stream');
         }
         ftruncate($this->_fd, $size);
@@ -172,7 +172,7 @@ class Zend_Io_Writer
     public function write($value, $length = null)
     {
         if ($this->_fd === null) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Cannot operate on a closed stream');
         }
         if ($length === null) {
@@ -538,7 +538,7 @@ class Zend_Io_Writer
     public function flush()
     {
         if ($this->_fd === null) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Cannot operate on a closed stream');
         }
         fflush($this->_fd);
@@ -606,7 +606,7 @@ class Zend_Io_Writer
             return call_user_func
                 (array($this, 'get' . ucfirst(strtolower($name))));
         } else {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Unknown field: ' . $name);
         }
     }
@@ -624,7 +624,7 @@ class Zend_Io_Writer
             call_user_func
                 (array($this, 'set' . ucfirst(strtolower($name))), $value);
         } else {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Unknown field: ' . $name);
         }
     }

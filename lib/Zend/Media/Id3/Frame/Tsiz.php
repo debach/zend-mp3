@@ -22,7 +22,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Id3/NumberFrame.php';
+
 /**#@-*/
 
 /**

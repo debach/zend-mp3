@@ -21,8 +21,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Flac/MetadataBlock.php';
-require_once 'Zend/Bit/Twiddling.php';
+
+
 /**#@-*/
 
 /**

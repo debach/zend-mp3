@@ -21,8 +21,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Id3/LinkFrame.php';
-require_once 'Zend/Media/Id3/Encoding.php';
+
+
 /**#@-*/
 
 /**

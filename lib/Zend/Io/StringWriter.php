@@ -20,7 +20,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Io/Writer.php';
+
 /**#@-*/
 
 /**
@@ -48,7 +48,7 @@ class Zend_Io_StringWriter extends Zend_Io_Writer
     public function __construct($data = null, $length = null)
     {
         if (($this->_fd = fopen('php://memory', 'w+b')) === false) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception('Unable to open php://memory stream');
         }
         if ($data !== null && is_string($data)) {
@@ -56,7 +56,7 @@ class Zend_Io_StringWriter extends Zend_Io_Writer
                 $length = strlen($data);
             }
             if (($this->_size = fwrite($this->_fd, $data, $length)) === false) {
-                require_once('Zend/Io/Exception.php');
+                
                 throw new Zend_Io_Exception
                     ('Unable to write data to php://memory stream');
             }

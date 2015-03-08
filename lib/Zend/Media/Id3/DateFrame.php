@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Id3/TextFrame.php';
+
 /**#@-*/
 
 /**
@@ -73,7 +73,7 @@ abstract class Zend_Media_Id3_DateFrame
      */
     public function getDate()
     {
-        require_once 'Zend/Date.php';
+        
         $date = new Zend_Date(0);
         $date->setTimezone('UTC');
         $date->set
@@ -89,7 +89,7 @@ abstract class Zend_Media_Id3_DateFrame
      */
     public function setDate($date = null)
     {
-        require_once 'Zend/Date.php';
+        
         if ($date === null) {
             $date = Zend_Date::now();
         }

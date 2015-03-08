@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Exception.php';
+
 /**#@-*/
 
 /**

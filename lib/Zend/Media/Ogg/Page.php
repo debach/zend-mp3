@@ -90,12 +90,12 @@ final class Zend_Media_Ogg_Page
 
         $this->_capturePattern = $this->_reader->read(4);
         if ($this->_capturePattern != 'OggS') {
-            require_once 'Zend/Media/Ogg/Exception.php';
+            
             throw new Zend_Media_Ogg_Exception('Not a valid Ogg bitstream');
         }
         $this->_streamStructureVersion = $this->_reader->readUInt8();
         if ($this->_streamStructureVersion != 0) {
-            require_once 'Zend/Media/Ogg/Exception.php';
+            
             throw new Zend_Media_Ogg_Exception('Unsupported Ogg stream structure version');
         }
         $this->_headerTypeFlag = $this->_reader->readUInt8();

@@ -9,8 +9,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Riff/Chunk.php';
-require_once 'Zend/Media/Id3v2.php';
+
+
 /**#@-*/
 
 /**

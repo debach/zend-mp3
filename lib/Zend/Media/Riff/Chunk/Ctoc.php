@@ -9,7 +9,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Riff/Chunk.php';
+
 /**#@-*/
 
 /**
@@ -41,7 +41,7 @@ final class Zend_Media_Riff_Chunk_Ctoc extends Zend_Media_Riff_Chunk
     public function __construct($reader)
     {
         parent::__construct($reader);
-        require_once('Zend/Media/Riff/Exception.php');
+        
         throw new Zend_Media_Riff_Exception('Not yet implemented');
     }
 }

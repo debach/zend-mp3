@@ -21,8 +21,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Bit/Twiddling.php';
-require_once 'Zend/Media/Mpeg/Abs/Object.php';
+
+
 /**#@-*/
 
 /**
@@ -237,7 +237,7 @@ final class Zend_Media_Mpeg_Abs_Frame extends Zend_Media_Mpeg_Abs_Object
             }
             $this->_reader->setOffset(++$this->_offset + 1);
             if ($this->_offset == $this->_reader->getSize() || $i == (5775 - 1)) {
-                require_once 'Zend/Media/Mpeg/Exception.php';
+                
                 throw new Zend_Media_Mpeg_Exception
                     ('File does not contain a valid MPEG Audio Bit Stream (Invalid frame sync and resynchronization failed)');
             }

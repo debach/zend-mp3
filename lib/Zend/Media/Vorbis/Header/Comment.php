@@ -18,7 +18,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Vorbis/Header.php';
+
 /**#@-*/
 
 /**
@@ -94,7 +94,7 @@ final class Zend_Media_Vorbis_Header_Comment extends Zend_Media_Vorbis_Header
         if (!isset($options['vorbisContext']) || $options['vorbisContext']) {
             $this->_framingFlag = $this->_reader->readUInt8() & 0x1;
             if ($this->_framingFlag == 0) {
-                require_once 'Zend/Media/Vorbis/Exception.php';
+                
                 throw new Zend_Media_Vorbis_Exception('Undecodable Vorbis stream');
             }
             $this->_reader->skip($this->_packetSize - $this->_reader->getOffset() + 30 /* header */);
@@ -152,7 +152,7 @@ final class Zend_Media_Vorbis_Header_Comment extends Zend_Media_Vorbis_Header
         if (!empty($this->_comments[strtoupper($name)])) {
            return $this->_comments[strtoupper($name)][0];
         }
-        require_once 'Zend/Media/Vorbis/Exception.php';
+        
         throw new Zend_Media_Vorbis_Exception('Unknown field: ' . strtoupper($name));
     }
 

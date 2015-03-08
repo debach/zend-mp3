@@ -20,7 +20,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Io/Reader.php';
+
 /**#@-*/
 
 /**
@@ -49,7 +49,7 @@ class Zend_Io_FileReader extends Zend_Io_Reader
             $mode = 'rb';
         if (!file_exists($filename) || !is_readable($filename) ||
             ($fd = fopen($filename, $mode)) === false) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception
                 ('Unable to open file for reading: ' . $filename);
         }

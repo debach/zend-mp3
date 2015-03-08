@@ -149,7 +149,7 @@ abstract class Zend_Media_Flac_MetadataBlock
         if (method_exists($this, 'get' . ucfirst($name))) {
             return call_user_func(array($this, 'get' . ucfirst($name)));
         } else {
-            require_once 'Zend/Media/Flac/Exception.php';
+            
             throw new Zend_Media_Flac_Exception('Unknown field: ' . $name);
         }
     }
@@ -166,7 +166,7 @@ abstract class Zend_Media_Flac_MetadataBlock
         if (method_exists($this, 'set' . ucfirst($name))) {
             call_user_func(array($this, 'set' . ucfirst($name)), $value);
         } else {
-            require_once 'Zend/Media/Flac/Exception.php';
+            
             throw new Zend_Media_Flac_Exception('Unknown field: ' . $name);
         }
     }

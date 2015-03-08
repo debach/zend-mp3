@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object.php';
+
 /**#@-*/
 
 /**
@@ -221,7 +221,7 @@ final class Zend_Media_Asf_Object_StreamProperties extends Zend_Media_Asf_Object
     public function setStreamNumber($streamNumber)
     {
         if ($streamNumber < 1 || $streamNumber > 127) {
-            require_once 'Zend/Media/Asf/Exception.php';
+            
             throw new Zend_Media_Asf_Exception('Invalid argument');
         }
         $this->_flags = ($this->_flags & 0xffc0) | ($streamNumber & 0x3f);
@@ -410,7 +410,7 @@ final class Zend_Media_Asf_Object_StreamProperties extends Zend_Media_Asf_Object
      */
     public function write($writer)
     {
-        require_once 'Zend/Io/StringWriter.php';
+        
         $typeSpecificData = new Zend_Io_StringWriter();
         switch ($this->_streamType) {
             case self::AUDIO_MEDIA:

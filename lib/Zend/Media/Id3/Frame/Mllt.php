@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Id3/Frame.php';
+
 /**#@-*/
 
 /**
@@ -79,7 +79,7 @@ final class Zend_Media_Id3_Frame_Mllt extends Zend_Media_Id3_Frame
         parent::__construct($reader, $options);
 
         if ($this->_reader === null) {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception('Write not supported yet');
         }
 

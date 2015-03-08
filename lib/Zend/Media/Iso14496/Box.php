@@ -328,7 +328,7 @@ class Zend_Media_Iso14496_Box
                 $this->_reader->setOffset($offset);
                 if (@fopen($filename = 'Zend/Media/Iso14496/Box/' .
                            ucfirst($type) . '.php', 'r', true) !== false) {
-                    require_once($filename);
+                    
                 }
                 if (class_exists
                     ($classname = 'Zend_Media_Iso14496_Box_' .
@@ -362,7 +362,7 @@ class Zend_Media_Iso14496_Box
     public final function hasBox($identifier)
     {
         if (!$this->isContainer()) {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception('Box not a container');
         }
         return isset($this->_boxes[$identifier]);
@@ -378,7 +378,7 @@ class Zend_Media_Iso14496_Box
     public final function getBoxes()
     {
         if (!$this->isContainer()) {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception('Box not a container');
         }
         return $this->_boxes;
@@ -403,7 +403,7 @@ class Zend_Media_Iso14496_Box
     public final function getBoxesByIdentifier($identifier)
     {
         if (!$this->isContainer()) {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception('Box not a container');
         }
         $matches = array();
@@ -435,7 +435,7 @@ class Zend_Media_Iso14496_Box
     public final function removeBoxesByIdentifier($identifier)
     {
         if (!$this->isContainer()) {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception("Box not a container");
         }
         $searchPattern = "/^" .
@@ -457,7 +457,7 @@ class Zend_Media_Iso14496_Box
     public final function addBox(&$box)
     {
         if (!$this->isContainer()) {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception('Box not a container');
         }
         $box->setParent($this);
@@ -477,7 +477,7 @@ class Zend_Media_Iso14496_Box
     public final function removeBox($box)
     {
         if (!$this->isContainer()) {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception('Box not a container');
         }
         if ($this->hasBox($box->getType())) {
@@ -526,13 +526,13 @@ class Zend_Media_Iso14496_Box
         }
         if (@fopen($filename = 'Zend/Media/Iso14496/Box/' .
                    ucfirst($name) . '.php', 'r', true) !== false) {
-            require_once($filename);
+            
         }
         if (class_exists
             ($classname = 'Zend_Media_Iso14496_Box_' . ucfirst($name))) {
             return $this->addBox(new $classname());
         }
-        require_once 'Zend/Media/Iso14496/Exception.php';
+        
         throw new Zend_Media_Iso14496_Exception('Unknown box/field: ' . $name);
     }
 
@@ -548,7 +548,7 @@ class Zend_Media_Iso14496_Box
         if (method_exists($this, 'set' . ucfirst($name))) {
             call_user_func(array($this, 'set' . ucfirst($name)), $value);
         } else {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception('Unknown field: ' . $name);
         }
     }
@@ -617,7 +617,7 @@ class Zend_Media_Iso14496_Box
     protected function _writeData($writer)
     {
         if (get_class($this) == "Zend_Media_Iso14496_Box") {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception
                 ('Unknown box \'' . $this->getType() . '\' cannot be written.');
         }
@@ -650,7 +650,7 @@ class Zend_Media_Iso14496_Box
     public function write($writer)
     {
         if (get_class($this) == "Zend_Media_Iso14496_Box") {
-            require_once 'Zend/Media/Iso14496/Exception.php';
+            
             throw new Zend_Media_Iso14496_Exception
                 ('Unknown box \'' . $this->getType() . '\' cannot be written.');
         }

@@ -21,9 +21,9 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Id3/Object.php';
-require_once 'Zend/Io/StringReader.php';
-require_once 'Zend/Io/StringWriter.php';
+
+
+
 /**#@-*/
 
 /**

@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Io/Reader.php';
+
 /**#@-*/
 
 /**
@@ -66,11 +66,11 @@ abstract class Zend_Media_Vorbis_Header
     {
         $this->_reader = $reader;
         if (!in_array($this->_packetType = $this->_reader->readUInt8(), array(1, 3, 5))) {
-            require_once 'Zend/Media/Vorbis/Exception.php';
+            
             throw new Zend_Media_Vorbis_Exception('Unknown header packet type: ' . $this->_packetType);
         }
         if (($vorbis = $this->_reader->read(6)) != 'vorbis') {
-            require_once 'Zend/Media/Vorbis/Exception.php';
+            
             throw new Zend_Media_Vorbis_Exception('Unknown header packet: ' . $vorbis);
         }
 
@@ -108,7 +108,7 @@ abstract class Zend_Media_Vorbis_Header
         if (method_exists($this, 'get' . ucfirst($name))) {
             return call_user_func(array($this, 'get' . ucfirst($name)));
         } else {
-            require_once 'Zend/Media/Vorbis/Exception.php';
+            
             throw new Zend_Media_Vorbis_Exception('Unknown field: ' . $name);
         }
     }

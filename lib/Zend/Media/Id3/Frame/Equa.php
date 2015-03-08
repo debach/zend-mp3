@@ -22,7 +22,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Id3/Frame.php';
+
 /**#@-*/
 
 /**
@@ -62,7 +62,7 @@ final class Zend_Media_Id3_Frame_Equa extends Zend_Media_Id3_Frame
 
         $adjustmentBits = $this->_reader->readInt8();
         if ($adjustmentBits <= 8 || $adjustmentBits > 16) {
-            require_once 'Zend/Media/Id3/Exception.php';
+            
             throw new Zend_Media_Id3_Exception
                 ('Unsupported adjustment bit size of: ' . $adjustmentBits);
         }

@@ -20,7 +20,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Io/Writer.php';
+
 /**#@-*/
 
 /**
@@ -49,7 +49,7 @@ class Zend_Io_FileWriter extends Zend_Io_Writer
         if ($mode === null)
             $mode = file_exists($filename) ? 'r+b' : 'wb';
         if (($fd = fopen($filename, $mode)) === false) {
-            require_once('Zend/Io/Exception.php');
+            
             throw new Zend_Io_Exception
                 ('Unable to open file for writing: ' . $filename);
         }

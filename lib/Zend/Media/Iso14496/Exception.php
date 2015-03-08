@@ -33,7 +33,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Exception.php';
+
 /**#@-*/
 
 /**

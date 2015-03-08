@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Io/Reader.php';
+
 /**#@-*/
 
 /**
@@ -89,19 +89,19 @@ final class Zend_Media_Flac
             $this->_reader = &$filename;
         } else {
             $this->_filename = $filename;
-            require_once('Zend/Io/FileReader.php');
+            
             try {
                 $this->_reader = new Zend_Io_FileReader($filename);
             } catch (Zend_Io_Exception $e) {
                 $this->_reader = null;
-                require_once 'Zend/Media/Flac/Exception.php';
+                
                 throw new Zend_Media_Flac_Exception($e->getMessage());
             }
         }
 
         $capturePattern = $this->_reader->read(4);
         if ($capturePattern != 'fLaC') {
-            require_once 'Zend/Media/Flac/Exception.php';
+            
             throw new Zend_Media_Flac_Exception('Not a valid FLAC bitstream');
         }
 
@@ -114,31 +114,31 @@ final class Zend_Media_Flac
             $this->_reader->setOffset($offset);
             switch ($type) {
             case self::STREAMINFO:     // 0
-                require_once 'Zend/Media/Flac/MetadataBlock/Streaminfo.php';
+                
                 $this->_metadataBlocks[] = new Zend_Media_Flac_MetadataBlock_Streaminfo($this->_reader);
                 break;
             case self::PADDING:        // 1
-                require_once 'Zend/Media/Flac/MetadataBlock/Padding.php';
+                
                 $this->_metadataBlocks[] = new Zend_Media_Flac_MetadataBlock_Padding($this->_reader);
                 break;
             case self::APPLICATION:    // 2
-                require_once 'Zend/Media/Flac/MetadataBlock/Application.php';
+                
                 $this->_metadataBlocks[] = new Zend_Media_Flac_MetadataBlock_Application($this->_reader);
                 break;
             case self::SEEKTABLE:      // 3
-                require_once 'Zend/Media/Flac/MetadataBlock/Seektable.php';
+                
                 $this->_metadataBlocks[] = new Zend_Media_Flac_MetadataBlock_Seektable($this->_reader);
                 break;
             case self::VORBIS_COMMENT: // 4
-                require_once 'Zend/Media/Flac/MetadataBlock/VorbisComment.php';
+                
                 $this->_metadataBlocks[] = new Zend_Media_Flac_MetadataBlock_VorbisComment($this->_reader);
                 break;
             case self::CUESHEET:       // 5
-                require_once 'Zend/Media/Flac/MetadataBlock/Cuesheet.php';
+                
                 $this->_metadataBlocks[] = new Zend_Media_Flac_MetadataBlock_Cuesheet($this->_reader);
                 break;
             case self::PICTURE:        // 6
-                require_once 'Zend/Media/Flac/MetadataBlock/Picture.php';
+                
                 $this->_metadataBlocks[] = new Zend_Media_Flac_MetadataBlock_Picture($this->_reader);
                 break;
             default:
@@ -224,7 +224,7 @@ final class Zend_Media_Flac
         if (!empty($this->_comments[strtoupper($name)])) {
            return $this->_comments[strtoupper($name)][0];
         }
-        require_once 'Zend/Media/Flac/Exception.php';
+        
         throw new Zend_Media_Flac_Exception('Unknown metadata block: ' . strtoupper($name));
     }
 
@@ -246,7 +246,7 @@ final class Zend_Media_Flac
                 return $metadataBlocks[0];
             }
         }
-        require_once 'Zend/Media/Flac/Exception.php';
+        
         throw new Zend_Media_Flac_Exception('Unknown metadata block or field: ' . $name);
     }
 
@@ -263,7 +263,7 @@ final class Zend_Media_Flac
             call_user_func
                 (array($this, 'set' . ucfirst(strtolower($name))), $value);
         } else {
-            require_once('Zend/Media/Flac/Exception.php');
+            
             throw new Zend_Media_Flac_Exception('Unknown field: ' . $name);
         }
     }

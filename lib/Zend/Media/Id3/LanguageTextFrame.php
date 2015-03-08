@@ -21,9 +21,9 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Id3/Frame.php';
-require_once 'Zend/Media/Id3/Encoding.php';
-require_once 'Zend/Media/Id3/Language.php';
+
+
+
 /**#@-*/
 
 /**

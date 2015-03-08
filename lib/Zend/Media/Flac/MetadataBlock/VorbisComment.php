@@ -21,8 +21,8 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Flac/MetadataBlock.php';
-require_once 'Zend/Media/Vorbis/Header/Comment.php';
+
+
 /**#@-*/
 
 /**
@@ -74,7 +74,7 @@ final class Zend_Media_Flac_MetadataBlock_VorbisComment extends Zend_Media_Flac_
         try {
             return $this->_impl->$name($arguments);
         } catch (Zend_Media_Vorbis_Exception $e) {
-            require_once 'Zend/Media/Flac/Exception.php';
+            
             throw new Zend_Media_Flac_Exception($e->getMessage());
         }
     }
@@ -96,7 +96,7 @@ final class Zend_Media_Flac_MetadataBlock_VorbisComment extends Zend_Media_Flac_
         try {
             return $this->_impl->__get($name);
         } catch (Zend_Media_Vorbis_Exception $e) {
-            require_once 'Zend/Media/Flac/Exception.php';
+            
             throw new Zend_Media_Flac_Exception($e->getMessage());
         }
     }
@@ -116,7 +116,7 @@ final class Zend_Media_Flac_MetadataBlock_VorbisComment extends Zend_Media_Flac_
             try {
                 return $this->_impl->__set($name, $value);
             } catch (Zend_Media_Vorbis_Exception $e) {
-                require_once 'Zend/Media/Flac/Exception.php';
+                
                 throw new Zend_Media_Flac_Exception($e->getMessage());
             }
         }
@@ -133,7 +133,7 @@ final class Zend_Media_Flac_MetadataBlock_VorbisComment extends Zend_Media_Flac_
         try {
             return $this->_impl->__isset($name);
         } catch (Zend_Media_Vorbis_Exception $e) {
-            require_once 'Zend/Media/Flac/Exception.php';
+            
             throw new Zend_Media_Flac_Exception($e->getMessage());
         }
     }
@@ -148,7 +148,7 @@ final class Zend_Media_Flac_MetadataBlock_VorbisComment extends Zend_Media_Flac_
         try {
             $this->_impl->__unset($name);
         } catch (Zend_Media_Vorbis_Exception $e) {
-            require_once 'Zend/Media/Flac/Exception.php';
+            
             throw new Zend_Media_Flac_Exception($e->getMessage());
         }
     }

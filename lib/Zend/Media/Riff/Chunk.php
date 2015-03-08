@@ -101,7 +101,7 @@ abstract class Zend_Media_Riff_Chunk
         if (method_exists($this, 'get' . ucfirst(strtolower($name)))) {
             return call_user_func(array($this, 'get' . ucfirst(strtolower($name))));
         } else {
-            require_once('Zend/Media/Riff/Exception.php');
+            
             throw new Zend_Media_Riff_Exception('Unknown field: ' . $name);
         }
     }
@@ -118,7 +118,7 @@ abstract class Zend_Media_Riff_Chunk
         if (method_exists($this, 'set' . ucfirst(strtolower($name)))) {
             call_user_func(array($this, 'set' . ucfirst(strtolower($name))), $value);
         } else {
-            require_once('Zend/Media/Riff/Exception.php');
+            
             throw new Zend_Media_Riff_Exception('Unknown field: ' . $name);
         }
     }

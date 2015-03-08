@@ -21,7 +21,7 @@
  */
 
 /**#@+ @ignore */
-require_once 'Zend/Media/Asf/Object.php';
+
 /**#@-*/
 
 /**
@@ -94,7 +94,7 @@ final class Zend_Media_Asf_Object_LanguageList extends Zend_Media_Asf_Object
      */
     public function write($writer)
     {
-        require_once 'Zend/Io/StringWriter.php';
+        
         $languageIdRecordsCount = count($this->_languages);
         $languageIdRecordsWriter = new Zend_Io_StringWriter();
         for ($i = 0; $i < $languageIdRecordsCount; $i++) {
