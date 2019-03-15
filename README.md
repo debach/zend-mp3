@@ -14,7 +14,7 @@ Install PHP Reader with [composer](https://getcomposer.org) via
 
 ## How to use PHP Reader
 
-PHP reader has a [nice documentation](https://code.google.com/p/php-reader/) both on its website and in the code. What follows are a couple of examples to give you a quick start. PHP reader can do a lot more that what is covered here.
+PHP reader has a [nice documentation](https://code.google.com/p/php-reader/) both on its website and in the code. What follows are a couple of examples to give you a quick start. PHP reader can do a lot more than what is covered here.
 
 ### Reading the duration of an MP3 file
 
